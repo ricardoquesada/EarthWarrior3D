@@ -5,7 +5,6 @@
 #include <string>
 #include <vector>
 
-#include "Vector.h"
 #include "cocos2d.h"
 
 //struct Face

@@ -404,7 +404,6 @@
 		BB0C487E190910CE0015152C /* Sprite3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sprite3D.h; sourceTree = "<group>"; };
 		BB0C487F190910CE0015152C /* Textured.es2.frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Textured.es2.frag.h; sourceTree = "<group>"; };
 		BB0C4880190910CE0015152C /* Textured.es2.vert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Textured.es2.vert.h; sourceTree = "<group>"; };
-		BB0C4881190910CE0015152C /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
 		BB0C4882190910CE0015152C /* AirCraft.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AirCraft.cpp; path = ../Classes/AirCraft.cpp; sourceTree = "<group>"; };
 		BB0C4883190910CE0015152C /* AirCraft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AirCraft.h; path = ../Classes/AirCraft.h; sourceTree = "<group>"; };
 		BB0C4884190910CE0015152C /* Bullets.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bullets.cpp; path = ../Classes/Bullets.cpp; sourceTree = "<group>"; };
@@ -790,7 +789,6 @@
 				BB0C487E190910CE0015152C /* Sprite3D.h */,
 				BB0C487F190910CE0015152C /* Textured.es2.frag.h */,
 				BB0C4880190910CE0015152C /* Textured.es2.vert.h */,
-				BB0C4881190910CE0015152C /* Vector.h */,
 			);
 			name = 3d;
 			path = ../Classes/3d;
