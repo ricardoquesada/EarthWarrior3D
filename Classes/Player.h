@@ -46,21 +46,21 @@ public:
     const float maxRoll = 75;
     const float rollReturnThreshold = 1.02;
     void setTargetAngle(float angle){targetAngle = angle;};
-    void setTargetPos(Vector2 target){targetPos = target;};
+    void setTargetPos(Vec2 target){targetPos = target;};
     
     void shoot(float dt);
     void shootMissile(float dt);
     void stop();
     CC_SYNTHESIZE(MotionStreak*, _streak, Trail);
     CC_SYNTHESIZE(ParticleSystemQuad*, _emissionPart, EmissionPart);
-    void setPosition(Vector2 pos);
+    void setPosition(Vec2 pos);
     virtual bool hurt(float damage);
     virtual void die();
     void hideWarningLayer(Node* node);
 protected:
     float targetAngle = 0;
-    Vector2 targetPos = Vector2(0,0);
-    Vector2 _trailOffset = Vector2(0,-40);
+    Vec2 targetPos = Vec2(0,0);
+    Vec2 _trailOffset = Vec2(0,-40);
     
 };
 

@@ -31,9 +31,9 @@ struct RenderMesh
 {
     struct RenderVertex
     {
-        cocos2d::Vector3 vertex;
-        cocos2d::Vector3 normal;
-        cocos2d::Vector2 uv;
+        cocos2d::Vec3 vertex;
+        cocos2d::Vec3 normal;
+        cocos2d::Vec2 uv;
     };
     
     std::vector<RenderVertex> _vertexs;
@@ -43,9 +43,9 @@ struct RenderMesh
 struct ObjMeshData
 {
     //mesh data
-    std::vector<cocos2d::Vector3> _vertexLists;
-    std::vector<cocos2d::Vector2> _uvVertexLists;
-    std::vector<cocos2d::Vector3> _normalVertexLists;
+    std::vector<cocos2d::Vec3> _vertexLists;
+    std::vector<cocos2d::Vec2> _uvVertexLists;
+    std::vector<cocos2d::Vec3> _normalVertexLists;
     std::vector<std::vector<FaceVertex>> _faceLists;
     
 public:

@@ -7,28 +7,28 @@ const float Pi = 4 * std::atan(1.0f);
 const float TwoPi = 2 * Pi;
 //
 //template <typename T>
-//struct Vector2 {
-//    Vector2() {}
-//    Vector2(T x, T y) : x(x), y(y) {}
+//struct Vec2 {
+//    Vec2() {}
+//    Vec2(T x, T y) : x(x), y(y) {}
 //    T Dot(const Vector2& v) const
 //    {
 //        return x * v.x + y * v.y;
 //    }
-//    Vector2 operator+(const Vector2& v) const
+//    Vec2 operator+(const Vector2& v) const
 //    {
-//        return Vector2(x + v.x, y + v.y);
+//        return Vec2(x + v.x, y + v.y);
 //    }
-//    Vector2 operator-(const Vector2& v) const
+//    Vec2 operator-(const Vector2& v) const
 //    {
-//        return Vector2(x - v.x, y - v.y);
+//        return Vec2(x - v.x, y - v.y);
 //    }
-//    Vector2 operator/(float s) const
+//    Vec2 operator/(float s) const
 //    {
-//        return Vector2(x / s, y / s);
+//        return Vec2(x / s, y / s);
 //    }
-//    Vector2 operator*(float s) const
+//    Vec2 operator*(float s) const
 //    {
-//        return Vector2(x * s, y * s);
+//        return Vec2(x * s, y * s);
 //    }
 //    void Normalize()
 //    {
@@ -36,9 +36,9 @@ const float TwoPi = 2 * Pi;
 //        x *= s;
 //        y *= s;
 //    }
-//    Vector2 Normalized() const 
+//    Vec2 Normalized() const 
 //    {
-//        Vector2 v = *this;
+//        Vec2 v = *this;
 //        v.Normalize();
 //        return v;
 //    }
@@ -58,15 +58,15 @@ const float TwoPi = 2 * Pi;
 //    {
 //        return x == v.x && y == v.y;
 //    }
-//    Vector2 Lerp(float t, const Vector2& v) const
+//    Vec2 Lerp(float t, const Vector2& v) const
 //    {
-//        return Vector2(x * (1 - t) + v.x * t,
+//        return Vec2(x * (1 - t) + v.x * t,
 //                       y * (1 - t) + v.y * t);
 //    }
 //    template <typename P>
 //    P* Write(P* pData)
 //    {
-//        Vector2* pVector = (Vector2*) pData;
+//        Vector2* pVector = (Vec2*) pData;
 //        *pVector++ = *this;
 //        return (P*) pVector;
 //    }
@@ -75,9 +75,9 @@ const float TwoPi = 2 * Pi;
 //};
 //
 //template <typename T>
-//struct Vector3 {
-//    Vector3() {}
-//    Vector3(T x, T y, T z) : x(x), y(y), z(z) {}
+//struct Vec3 {
+//    Vec3() {}
+//    Vec3(T x, T y, T z) : x(x), y(y), z(z) {}
 //    void Normalize()
 //    {
 //        float s = 1.0f / std::sqrt(x * x + y * y + z * z);
@@ -85,15 +85,15 @@ const float TwoPi = 2 * Pi;
 //        y *= s;
 //        z *= s;
 //    }
-//    Vector3 Normalized() const 
+//    Vec3 Normalized() const 
 //    {
-//        Vector3 v = *this;
+//        Vec3 v = *this;
 //        v.Normalize();
 //        return v;
 //    }
-//    Vector3 Cross(const Vector3& v) const
+//    Vec3 Cross(const Vector3& v) const
 //    {
-//        return Vector3(y * v.z - z * v.y,
+//        return Vec3(y * v.z - z * v.y,
 //                       z * v.x - x * v.z,
 //                       x * v.y - y * v.x);
 //    }
@@ -101,9 +101,9 @@ const float TwoPi = 2 * Pi;
 //    {
 //        return x * v.x + y * v.y + z * v.z;
 //    }
-//    Vector3 operator+(const Vector3& v) const
+//    Vec3 operator+(const Vector3& v) const
 //    {
-//        return Vector3(x + v.x, y + v.y,  z + v.z);
+//        return Vec3(x + v.x, y + v.y,  z + v.z);
 //    }
 //    void operator+=(const Vector3& v)
 //    {
@@ -123,29 +123,29 @@ const float TwoPi = 2 * Pi;
 //        y /= s;
 //        z /= s;
 //    }
-//    Vector3 operator-(const Vector3& v) const
+//    Vec3 operator-(const Vector3& v) const
 //    {
-//        return Vector3(x - v.x, y - v.y,  z - v.z);
+//        return Vec3(x - v.x, y - v.y,  z - v.z);
 //    }
-//    Vector3 operator-() const
+//    Vec3 operator-() const
 //    {
-//        return Vector3(-x, -y, -z);
+//        return Vec3(-x, -y, -z);
 //    }
-//    Vector3 operator*(T s) const
+//    Vec3 operator*(T s) const
 //    {
-//        return Vector3(x * s, y * s, z * s);
+//        return Vec3(x * s, y * s, z * s);
 //    }
-//    Vector3 operator/(T s) const
+//    Vec3 operator/(T s) const
 //    {
-//        return Vector3(x / s, y / s, z / s);
+//        return Vec3(x / s, y / s, z / s);
 //    }
 //    bool operator==(const Vector3& v) const
 //    {
 //        return x == v.x && y == v.y && z == v.z;
 //    }
-//    Vector3 Lerp(float t, const Vector3& v) const
+//    Vec3 Lerp(float t, const Vector3& v) const
 //    {
-//        return Vector3(x * (1 - t) + v.x * t,
+//        return Vec3(x * (1 - t) + v.x * t,
 //                       y * (1 - t) + v.y * t,
 //                       z * (1 - t) + v.z * t);
 //    }
@@ -156,7 +156,7 @@ const float TwoPi = 2 * Pi;
 //    template <typename P>
 //    P* Write(P* pData)
 //    {
-//        Vector3<T>* pVector = (Vector3<T>*) pData;
+//        Vector3<T>* pVector = (Vec3<T>*) pData;
 //        *pVector++ = *this;
 //        return (P*) pVector;
 //    }
@@ -196,6 +196,6 @@ const float TwoPi = 2 * Pi;
 //typedef Vector3<int> ivec3;
 //typedef Vector4<int> ivec4;
 //
-typedef cocos2d::Vector2 vec2;
-typedef cocos2d::Vector3 vec3;
-typedef cocos2d::Vector4 vec4;
+typedef cocos2d::Vec2 vec2;
+typedef cocos2d::Vec3 vec3;
+typedef cocos2d::Vec4 vec4;

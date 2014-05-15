@@ -30,14 +30,14 @@ Node *GameEntity::getModel(){
     return _Model;
 }
 
-Vector3 GameEntity::getOrientation(){
+Vec3 GameEntity::getOrientation(){
     return _orientation;
 }
 
 void GameEntity::forward(float dist){
     float f = getRotation();
     setPosition(getPosition()
-                +Vector2(
+                +Vec2(
                        sinf(CC_DEGREES_TO_RADIANS(f))*dist,
                        cosf(CC_DEGREES_TO_RADIANS(f))*dist)
                 );

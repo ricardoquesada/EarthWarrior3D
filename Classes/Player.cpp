@@ -41,7 +41,7 @@ bool Player::init()
     {
         _Model->setScale(8);
         addChild(_Model);
-        _Model->setRotation3D(Vector3(90,0,0));
+        _Model->setRotation3D(Vec3(90,0,0));
         _radius = 40;
         _HP = 100;
         
@@ -74,7 +74,7 @@ bool Player::init()
 void Player::update(float dt)
 {
     float smoothedAngle =fmin(fmax(targetAngle*(1-dt*returnSpeed*(rollReturnThreshold-fabsf(targetAngle)/maxRoll)),-maxRoll),maxRoll);
-    setRotation3D(Vector3(fabsf(smoothedAngle)*0.15,smoothedAngle, 0));
+    setRotation3D(Vec3(fabsf(smoothedAngle)*0.15,smoothedAngle, 0));
     targetAngle = getRotation3D().y;
 }
 bool Player::onTouchBegan(Touch *touch, Event *event)
@@ -84,14 +84,14 @@ bool Player::onTouchBegan(Touch *touch, Event *event)
 }
 void Player::onTouchMoved(Touch *touch, Event *event)
 {
-    Vector2 prev = event->getCurrentTarget()->getPosition();
-    Vector2 delta =touch->getDelta();
+    Vec2 prev = event->getCurrentTarget()->getPosition();
+    Vec2 delta =touch->getDelta();
     
     setTargetAngle(targetAngle+delta.x*rollSpeed*(rollReturnThreshold-fabsf(targetAngle)/maxRoll));
     
-    Vector2 shiftPosition = delta+prev;
+    Vec2 shiftPosition = delta+prev;
   
-    setPosition(shiftPosition.getClampPoint(Vector2(PLAYER_LIMIT_LEFT,PLAYER_LIMIT_BOT),Vector2(PLAYER_LIMIT_RIGHT,PLAYER_LIMIT_TOP)));
+    setPosition(shiftPosition.getClampPoint(Vec2(PLAYER_LIMIT_LEFT,PLAYER_LIMIT_BOT),Vec2(PLAYER_LIMIT_RIGHT,PLAYER_LIMIT_TOP)));
 }
 void Player::onTouchEnded(Touch *touch, Event *event)
 {
@@ -100,11 +100,11 @@ void Player::onTouchEnded(Touch *touch, Event *event)
 void Player::shoot(float dt)
 {
 
-    BulletController::spawnBullet(kPlayerBullet, getPosition()+Vector2(-20,20), Vector2(-200,1600));
-    BulletController::spawnBullet(kPlayerBullet, getPosition()+Vector2(20,20), Vector2(200,1600));
-        BulletController::spawnBullet(kPlayerBullet, getPosition()+Vector2(0,20), Vector2(0,1600));
+    BulletController::spawnBullet(kPlayerBullet, getPosition()+Vec2(-20,20), Vec2(-200,1600));
+    BulletController::spawnBullet(kPlayerBullet, getPosition()+Vec2(20,20), Vec2(200,1600));
+        BulletController::spawnBullet(kPlayerBullet, getPosition()+Vec2(0,20), Vec2(0,1600));
 }
-void Player::setPosition(Vector2 pos)
+void Player::setPosition(Vec2 pos)
 {
     if (_position.equals(pos))
         return;
@@ -122,9 +122,9 @@ void Player::setPosition(Vector2 pos)
 }
 void Player::shootMissile(float dt)
 {
-    auto left = BulletController::spawnBullet(kPlayerMissiles, getPosition()+Vector2(-50,-20), Vector2(-200,-200));
+    auto left = BulletController::spawnBullet(kPlayerMissiles, getPosition()+Vec2(-50,-20), Vec2(-200,-200));
     left->setRotation(-45);
-    auto right = BulletController::spawnBullet(kPlayerMissiles, getPosition()+Vector2(50,-20), Vector2(200,-200));
+    auto right = BulletController::spawnBullet(kPlayerMissiles, getPosition()+Vec2(50,-20), Vec2(200,-200));
     right->setRotation(45);
 }
 
